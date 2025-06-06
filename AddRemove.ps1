@@ -3,7 +3,7 @@ function Ensure-MgGraphReady {
     # Check and install Microsoft.Graph module if missing
     if (-not (Get-Module -ListAvailable -Name Microsoft.Graph)) {
         Write-Host "📦 Microsoft.Graph module not found. Installing..."
-        Install-Module Microsoft.Graph -Scope CurrentUser -Force
+        Install-Module Microsoft.Graph -Scope AllUsers -Force
     }
 
     # Check if connected to Microsoft Graph
@@ -80,7 +80,4 @@ function Remove-DeviceFromGroup {
     }
 }
 
-<#
-"SHD-4V6X23513H7" | Add-DeviceToGroup -GroupName "Katsu test DeviceGroup"
-"SHD-4V6X23513H7" | Remove-DeviceFromGroup -GroupName "Katsu test DeviceGroup"
-#>
+
