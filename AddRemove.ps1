@@ -10,7 +10,7 @@ function Ensure-MgGraphReady {
     try {
         if (-not (Get-MgContext)) {
             Write-Host "🔐 Not connected to Microsoft Graph. Signing in..."
-            Connect-MgGraph -Scopes "Group.ReadWrite.All", "Device.Read.All", "Directory.Read.All"
+            Connect-MgGraph # -Scopes "Group.ReadWrite.All", "Device.Read.All", "Directory.Read.All"
         }
     } catch {
         Write-Error "❌ Failed to connect to Microsoft Graph: $_"
